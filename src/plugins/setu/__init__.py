@@ -37,7 +37,15 @@ async def _setu_action(bot: Bot, event: GroupMessageEvent):
                     "content": MessageSegment.image(pth)
                 }
             },
-                        {
+            {
+                "type": "node",
+                "data": {
+                    "name": "Jitsu API",
+                    "uin": event.self_id,
+                    "content": "你就说涩不涩吧 [CQ:face,id=277]"
+                }
+            },
+            {
                 "type": "node",
                 "data": {
                     "name": "Jitsu API",
