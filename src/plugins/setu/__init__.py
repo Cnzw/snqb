@@ -50,7 +50,7 @@ async def _setu_action(bot: Bot, event: GroupMessageEvent):
                 "data": {
                     "name": "Jitsu API",
                     "uin": event.self_id,
-                    "content": "pth: 3397f1b55f54523160752297d269ee0e"
+                    "content": "原图自取~\n#ffde00"
                 }
             },
             {
@@ -78,8 +78,9 @@ async def _setu_action(bot: Bot, event: GroupMessageEvent):
             result = resp.json()
         
         logger.debug(result)
-        imgUrl: str = result['pics'][0] + '?x-bce-process=image/resize,limit_1,p_20'
-        pth = re.match(r'https://pic\.rmb.bdstatic\.com/bjh/([a-z0-9]+)', result['pics'][0]).group(1)
+        imgUrl: str = result['pics'][0] + '?x-bce-process=image/resize,limit_1,p_40'
+        # pth = re.match(r'https://pic\.rmb.bdstatic\.com/bjh/([a-z0-9]+)', result['pics'][0]).group(1)
+        pth = result['pics'][0] #[8:]
         
 
         # msg = Message(MessageSegment.image(imgUrl) + f'\npth: {pth}\n(+60s CD) 图片By JitsuAPI')
@@ -97,7 +98,7 @@ async def _setu_action(bot: Bot, event: GroupMessageEvent):
                 "data": {
                     "name": "Jitsu API",
                     "uin": event.self_id,
-                    "content": f"pth: {pth}"
+                    "content": f"原图自取~\n{pth}"
                 }
             },
             {
